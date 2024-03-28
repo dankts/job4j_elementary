@@ -2,7 +2,7 @@ package ru.job4j.array;
 
 public class SimpleStringEncoder {
     public static String encode(String input) {
-        StringBuilder result = new StringBuilder(); // aabbbccd
+        StringBuilder result = new StringBuilder();
         char symbol = input.charAt(0);
         int counter = 1;
         for (int i = 1; i < input.length(); i++) {
@@ -30,7 +30,7 @@ public class SimpleStringEncoder {
     }
 
     public static void main(String[] args) {
-        String result = encode("a");
+        String result = encode("adaaad");
         System.out.println(result);
     }
 }
