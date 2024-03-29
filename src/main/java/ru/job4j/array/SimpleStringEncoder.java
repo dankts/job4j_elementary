@@ -9,24 +9,23 @@ public class SimpleStringEncoder {
             if (symbol == input.charAt(i)) {
                 counter++;
             } else {
-                if (counter > 1) {
-                    result.append(symbol);
-                    result.append(counter);
-                } else {
-                    result.append(symbol);
-                }
+                addSymbol(result, symbol, counter);
                 symbol = input.charAt(i);
                 counter = 1;
             }
         }
 
+        addSymbol(result, symbol, counter);
+        return result.toString();
+    }
+
+    private static void addSymbol(StringBuilder result, char symbol, int counter) {
         if (counter > 1) {
             result.append(symbol);
             result.append(counter);
-        } else if (counter == 1) {
+        } else {
             result.append(symbol);
         }
-        return result.toString();
     }
 
     public static void main(String[] args) {
